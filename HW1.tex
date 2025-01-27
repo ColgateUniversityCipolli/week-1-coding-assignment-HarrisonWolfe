@@ -246,7 +246,13 @@
   the sentence below.\\
 \textbf{Solution:} We created the generative art in Question 1 using the \texttt{aRtsy}
 package for \texttt{R}. \citep{artsy} 
+
+\bibliography{bibliography}
+
 \end{enumerate}
+
+
+
 
 \newpage
 
@@ -265,9 +271,10 @@ package for \texttt{R}. \citep{artsy}
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hldef{x}\hlkwb{=}\hldef{(}\hlnum{0}\hlopt{:}\hlnum{10}\hldef{)}
+\hlcom{#initial sequence}
+\hldef{seq.1}\hlkwb{=}\hldef{(}\hlnum{0}\hlopt{:}\hlnum{10}\hldef{)}
 
-\hldef{x}
+\hldef{seq.1}
 \end{alltt}
 \begin{verbatim}
 ##  [1]  0  1  2  3  4  5  6  7  8  9 10
@@ -282,9 +289,10 @@ package for \texttt{R}. \citep{artsy}
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hldef{y} \hlkwb{=} \hlnum{2}\hlopt{^}\hldef{(x}\hlopt{+}\hlnum{1}\hldef{)} \hlopt{+} \hlnum{2}\hlopt{^}\hldef{(x}\hlopt{-}\hlnum{1}\hldef{)}
+\hlcom{#sequence after algebra}
+\hldef{seq.2} \hlkwb{=} \hlnum{2}\hlopt{^}\hldef{(seq.1}\hlopt{+}\hlnum{1}\hldef{)} \hlopt{+} \hlnum{2}\hlopt{^}\hldef{(seq.1}\hlopt{-}\hlnum{1}\hldef{)}
 
-\hldef{y}
+\hldef{seq.2}
 \end{alltt}
 \begin{verbatim}
 ##  [1]    2.5    5.0   10.0   20.0   40.0   80.0  160.0  320.0  640.0 1280.0
@@ -300,7 +308,7 @@ package for \texttt{R}. \citep{artsy}
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{which}\hldef{(y} \hlopt{==} \hlnum{40}\hldef{)}
+\hlkwd{which}\hldef{(seq.2} \hlopt{==} \hlnum{40}\hldef{)}
 \end{alltt}
 \begin{verbatim}
 ## [1] 5
@@ -325,7 +333,7 @@ package for \texttt{R}. \citep{artsy}
   \item Explain why this approach wouldn't work for something like $3^{x+2} + 5 (3^x) = 84$ where the solution is $x \approx 1.6309$.\\
 \textbf{Solution:}
 
-The number 84 will not be in the sequence of y so it cannot calcualte a result because it is not using algebra but simply looking for it in the sequence.  
+The number 84 will not be in the sequence of seq.2 so it cannot calcualte a result because it is not using algebra but simply looking for it in the sequence.  
 
 \end{enumerate}
 \end{enumerate}
