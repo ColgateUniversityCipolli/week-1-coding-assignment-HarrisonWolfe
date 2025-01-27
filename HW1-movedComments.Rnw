@@ -1,0 +1,131 @@
+\documentclass{article}
+\usepackage[margin=1.0in]{geometry} % To set margins
+\usepackage{amsmath}  % This allows me to use the align functionality.
+                      % If you find yourself trying to replicate
+                      % something you found online, ensure you're
+                      % loading the necessary packages!
+\usepackage{amsfonts} % Math font
+\usepackage{fancyvrb}
+\usepackage{hyperref} % For including hyperlinks
+\usepackage[shortlabels]{enumitem}% For enumerated lists with labels specified
+                                  % We had to run tlmgr_install("enumitem") in R
+\usepackage{float}    % For telling R where to put a table/figure
+\usepackage{natbib}        %For the bibliography
+\bibliographystyle{apalike}%For the bibliography
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{enumerate}
+\item Let's create some aRt! 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % QUESTION 1a
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{enumerate}
+\item Install the \texttt{aRtsy} package. Provide the code in an R chunk   that does 
+not run. You only need to install it one time.\\
+\textbf{Solution:}
+% Note that I have added eval=FALSE so that it won't run
+% each time I compile
+<<eval=FALSE, size="scriptsize", warning=FALSE, message=FALSE>>=
+# Code to install the aRtsy package
+@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION 1b
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \item Load the \texttt{aRtsy} package. Provide the code in an R chunk that does run. 
+  We need to load the library each time it is run.\\
+\textbf{Solution:}
+% Note here I have removed eval=FALSE so this code will run
+<<size="scriptsize", warning=FALSE, message=FALSE>>=
+@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTION 1c
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \item Running \texttt{demo("aRtsy")} or \texttt{vignette("aRtsy")} don't return 
+any helpful demos or tutorials. However, if you run \texttt{help("aRtsy")} you 
+will find a link to a tutorial. Recreate the first figure they make using 
+\texttt{canvas\_collatz()}. Make sure to update the caption.\\
+\textbf{Solution:}
+<<CollatzPlot1, eval=FALSE, size="scriptsize", warning=FALSE, message=FALSE>>=
+# help("aRtsy")
+@
+%Code to insert a figure [H]ere
+\begin{figure}[H]
+\begin{center}
+%<<echo=FALSE,fig.dim=c(4,4)>>=
+%<<CollatzPlot1>>
+%@
+  \caption{A caption...}
+\label{CollatzPlot1}
+\end{center}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % QUESTION 1d
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \item Change the randomization seed to 1313, which will change the random
+numbers generated to create the plot. Can you see the difference? Make sure to 
+update the caption.\\
+\textbf{Solution:}
+<<CollatzPlot2, eval=FALSE, size="scriptsize", warning=FALSE, message=FALSE>>=
+@
+%Code to insert a figure [H]ere
+\begin{figure}[H]
+\begin{center}
+%<<echo=FALSE,fig.dim=c(4,4)>>=
+%<<CollatzPlot2>>
+%@
+\caption{A caption...}
+\label{CollatzPlot2}
+\end{center}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % QUESTION 1e
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \item Now, create a new Collatz conjecture plot by specifying the following 
+arguments. Note you will find the help file for the \texttt{canvas\_collatz()} 
+function to be rather helpful. Make sure to update the caption.
+\begin{itemize}
+\item Use the \texttt{vrolik4} color palette. Note you can find other by running 
+\texttt{?colorPalette} in the console.
+\item Make the background grey. Note a hexcode for grey is \texttt{\#dbdbdb}.
+  \item Specify that there should be 72 strands.
+  \item Specify the angle used for bending the sequence for odd numbers as -0.05.
+  \item Specify the angle used for bending the sequence for even numbers as 0.0145 
+  (note this is the default).
+  \end{itemize}
+  \textbf{Solution:}
+<<CollatzPlot3, eval=FALSE, size="scriptsize", warning=FALSE, message=FALSE>>=
+@
+%Code to insert a figure [H]ere
+  \begin{figure}[H]
+  \begin{center}
+%<<echo=FALSE,fig.dim=c(4,4)>>=
+%<<CollatzPlot3>>
+%@
+    \caption{A caption...}
+  \label{CollatzPlot3}
+  \end{center}
+  \end{figure}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % QUESTION 1f
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \item Make another plot using the tutorial -- feel free to be creative here! 
+    Note that I leave creating the R chunk and figure environment to you here. 
+  Make sure that your code is well-formatted and your plot is appropriately scaled.\\
+  \textbf{Solution:}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % QUESTION 1g
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \item Use \texttt{citation()} to get the BiBTeX citation for the \texttt{aRtsy}
+  package and use \verb|\citep{}| to add a parenthetical citation to the end of
+  the sentence below.
+  \textbf{Solution:} We created the generative art in Question 1 using the \texttt{aRtsy}
+  package for \texttt{R}.
+  \end{enumerate}
+\end{enumerate}
+
+\end{document}

@@ -1,8 +1,8 @@
 \documentclass{article}
 \usepackage[margin=1.0in]{geometry} % To set margins
 \usepackage{amsmath}  % This allows me to use the align functionality.
-                      % If you find yourself trying to replicate
-                      % something you found online, ensure you're
+% If you find yourself trying to replicate
+% something you found online, ensure you're
                       % loading the necessary packages!
 \usepackage{amsfonts} % Math font
 \usepackage{fancyvrb}
@@ -22,12 +22,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item Let's create some aRt! 
-\begin{enumerate}
+  \begin{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% QUESTION 1a
+  % QUESTION 1a
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \item Install the \texttt{aRtsy} package. Provide the code in an R chunk   that does 
-  not run. You only need to install it one time.\\
+not run. You only need to install it one time.\\
 \textbf{Solution:}
 % Note that I have added eval=FALSE so that it won't run
 % each time I compile
@@ -49,125 +49,129 @@ library(aRtsy)
 % QUESTION 1c
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \item Running \texttt{demo("aRtsy")} or \texttt{vignette("aRtsy")} don't return 
- any helpful demos or tutorials. However, if you run \texttt{help("aRtsy")} you 
- will find a link to a tutorial. Recreate the first figure they make using 
- \texttt{canvas\_collatz()}. Make sure to update the caption.\\
+any helpful demos or tutorials. However, if you run \texttt{help("aRtsy")} you 
+will find a link to a tutorial. Recreate the first figure they make using 
+\texttt{canvas_collatz()}. Make sure to update the caption.\\
 \textbf{Solution:}
 <<CollatzPlot1, eval=FALSE, size="scriptsize", warning=FALSE, message=FALSE>>=
-# help("aRtsy")
-set.seed(1)
-canvas_collatz(colors = colorPalette("tuscany3"))
-@
-%Code to insert a figure [H]ere
+  # help("aRtsy")
+  @
+  %Code to insert a figure [H]ere
 \begin{figure}[H]
 \begin{center}
 <<echo=FALSE,fig.dim=c(4,4)>>=
-<<CollatzPlot1>>
+  <<CollatzPlot1>>
+  set.seed(1)
+canvas_collatz(colors = colorPalette("tuscany3"))
 @
-\caption{Recreation of the Collatz Conjecture from the Tutorial with Random Seed 1}
+  \caption{Recreation of the Collatz Conjecture from the Tutorial with Random Seed 1}
 \label{CollatzPlot1}
 \end{center}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% QUESTION 1d
+  % QUESTION 1d
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \item Change the randomization seed to 1313, which will change the random
-  numbers generated to create the plot. Can you see the difference? Make sure to 
-  update the caption.\\
+numbers generated to create the plot. Can you see the difference? Make sure to 
+update the caption.\\
 \textbf{Solution:}
 <<CollatzPlot2, eval=FALSE, size="scriptsize", warning=FALSE, message=FALSE>>=
-set.seed(1313)
-canvas_collatz(colors = colorPalette("tuscany3"))
-@
-%Code to insert a figure [H]ere
+  @
+  %Code to insert a figure [H]ere
 \begin{figure}[H]
 \begin{center}
 <<echo=FALSE,fig.dim=c(4,4)>>=
-<<CollatzPlot2>>
+  <<CollatzPlot2>>
+  set.seed(1313)
+canvas_collatz(colors = colorPalette("tuscany3"))
 @
-\caption{Collatz Cojecture with Random Seed 1313}
+  \caption{Collatz Cojecture with Random Seed 1313}
 \label{CollatzPlot2}
 \end{center}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% QUESTION 1e
+  % QUESTION 1e
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \item Now, create a new Collatz conjecture plot by specifying the following 
-  arguments. Note you will find the help file for the \texttt{canvas\_collatz()} 
-  function to be rather helpful. Make sure to update the caption.
-  \begin{itemize}
-  \item Use the \texttt{vrolik4} color palette. Note you can find other by running 
-  \texttt{?colorPalette} in the console.
-  \item Make the background grey. Note a hexcode for grey is \texttt{\#dbdbdb}.
+arguments. Note you will find the help file for the \texttt{canvas_collatz()} 
+function to be rather helpful. Make sure to update the caption.
+\begin{itemize}
+\item Use the \texttt{vrolik4} color palette. Note you can find other by running 
+\texttt{?colorPalette} in the console.
+\item Make the background grey. Note a hexcode for grey is \texttt{\#dbdbdb}.
   \item Specify that there should be 72 strands.
   \item Specify the angle used for bending the sequence for odd numbers as -0.05.
   \item Specify the angle used for bending the sequence for even numbers as 0.0145 
   (note this is the default).
   \end{itemize}
-\textbf{Solution:}
-<<CollatzPlot3, eval=FALSE, size="scriptsize", warning=FALSE, message=FALSE>>=
-canvas_collatz(
-  colors = colorPalette("vrolik4"),
-  background = "#dbdbdb",
-    n = 72,
-  angle.even = 0.0145,
-  angle.odd = -.05,
-  side = FALSE)
+  \textbf{Solution:}
+  <<CollatzPlot3, eval=FALSE, size="scriptsize", warning=FALSE, message=FALSE>>=
+    @
+    %Code to insert a figure [H]ere
+  \begin{figure}[H]
+  \begin{center}
+  <<echo=FALSE,fig.dim=c(4,4)>>=
+    <<CollatzPlot3>>
+    canvas_collatz(
+      colors = colorPalette("vrolik4"),
+      background = "#dbdbdb",
+      n = 72,
+      angle.even = 0.0145,
+      angle.odd = -.05,
+      side = FALSE)
+  
+  )
 @
-%Code to insert a figure [H]ere
-\begin{figure}[H]
-\begin{center}
-<<echo=FALSE,fig.dim=c(4,4)>>=
-<<CollatzPlot3>>
-@
-\caption{Collatz Conjecture with Grey Background, 72 strands, and the Color Palette vrolki4}
+  \caption{Collatz Conjecture with Grey Background, 72 strands, and the Color Palette vrolki4}
 \label{CollatzPlot3}
 \end{center}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% QUESTION 1f
+  % QUESTION 1f
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \item Make another plot using the tutorial -- feel free to be creative here! 
   Note that I leave creating the R chunk and figure environment to you here. 
-  Make sure that your code is well-formatted and your plot is appropriately scaled.\\
-  \textbf{Solution:}
+Make sure that your code is well-formatted and your plot is appropriately scaled.\\
+\textbf{Solution:}
 
 <<FractalFlamePlot, eval=FALSE, size="scriptsize", warning=FALSE, message=FALSE>>=
-canvas_flame(
-  colors = colorPalette("neo3"),
-  background = "#000000",
-  iterations = 1000000,
-  variations = 21,
-  symmetry = 3,
-  blend = TRUE,
-  weighted = FALSE,
-  post = FALSE,
-  final = FALSE,
-  extra = FALSE,
-  display = c("colored", "logdensity"),
-  zoom = 1.8,
-  resolution = 1000,
-  gamma = 1
-)
-@
-\begin{figure}[H]
+  @
+  \begin{figure}[H]
 \begin{center}
 <<echo=FALSE,fig.dim=c(4,4)>>=
-<<FractalFlamePlot>>
+  <<FractalFlamePlot>>
+  canvas_flame(
+    colors = colorPalette("neo3"),
+    background = "#000000",
+    iterations = 1000000,
+    variations = 21,
+    symmetry = 3,
+    blend = TRUE,
+    weighted = FALSE,
+    post = FALSE,
+    final = FALSE,
+    extra = FALSE,
+    display = c("colored", "logdensity"),
+    zoom = 1.8,
+    resolution = 1000,
+    gamma = 1
+  )
+
+)
 @
-\caption{Fractal Flames Plot Using Color Palette neo3 and the Rings Variation.}
+  \caption{Fractal Flames Plot Using Color Palette neo3 and the Rings Variation.}
 \label{FractalFlamePlot}
 \end{center}
 \end{figure}  
-  
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% QUESTION 1g
+  % QUESTION 1g
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \item Use \texttt{citation()} to get the BiBTeX citation for the \texttt{aRtsy}
-  package and use \verb|\citep{}| to add a parenthetical citation to the end of
-  the sentence below.\\
+package and use \verb|\citep{}| to add a parenthetical citation to the end of
+the sentence below.
 \textbf{Solution:} We created the generative art in Question 1 using the \texttt{aRtsy}
-package for \texttt{R}. \citep{artsy} 
+package for \texttt{R}. \citep{aRtsy}
 \end{enumerate}
 
 \newpage
@@ -186,8 +190,6 @@ package for \texttt{R}. \citep{artsy}
 \textbf{Solution:}
 <<size="scriptsize">>=
 x=(0:10)
-
-x
 @
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   % QUESTION 2b
@@ -195,24 +197,22 @@ x
   \item Complete the algebra to compute $2^{x+1} +2^{x-1}$ for each value in the numerical vector created in step 1. Make sure to save the result to a new numeric vector.\\
 \textbf{Solution:}
 <<size="scriptsize">>=
-y = 2^(x+1) + 2^(x-1)
-
-y
+2^(x+1) + 2^(x-1)
 @
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   % QUESTION 2c
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \item Use the which() function to ask which result is 40.\\
 \textbf{Solution:}
-<<size="scriptsize">>=
-which(y == 40)
+<<eval=FALSE, size="scriptsize">>=
+which(2^(x+1) + 2^(x-1) == 40)
 @
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   % QUESTION 2d
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \item What is the solution? That is, what value of x yields $2^{x+1} +2^{x-1} = 40$?\\
 \textbf{Solution:}
-<<eval=FALSE, size="scriptsize">>=
+<<size="scriptsize">>=
 4
 @
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -220,9 +220,9 @@ which(y == 40)
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \item Explain why this approach wouldn't work for something like $3^{x+2} + 5 (3^x) = 84$ where the solution is $x \approx 1.6309$.\\
 \textbf{Solution:}
-
-The number 84 will not be in the sequence of y so it cannot calcualte a result because it is not using algebra but simply looking for it in the sequence.  
-
+<<size="scriptsize">>=
+The number 84 will not be in the sequence of 3^{x+2} + 5(3^x) where x is the sequence from 0 to 10 so there cannot be a result. 
+@
 \end{enumerate}
 \end{enumerate}
 
