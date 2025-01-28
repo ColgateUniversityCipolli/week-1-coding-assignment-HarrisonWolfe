@@ -229,7 +229,10 @@ which(seq.2 == 40)
   \item Explain why this approach wouldn't work for something like $3^{x+2} + 5 (3^x) = 84$ where the solution is $x \approx 1.6309$.\\
 \textbf{Solution:}
 
-The number 84 will not be in the sequence of seq.2 so it cannot calcualte a result because it is not using algebra but simply looking for it in the sequence.  
+<<eval=FALSE, size="scriptsize">>=
+The number 84 will not be in the sequence of seq.2 so it cannot calcualte a result because it is not 
+using algebra but simply looking for it in the sequence.  
+@
 
 \end{enumerate}
 \end{enumerate}
